@@ -38,7 +38,7 @@ Semantic human review, adjudicated hallucination totals and unsupported-approval
 
 ## Native video observations
 
-The preserved 79.9-second real-host recording shows selected-component properties, a fresh comparison with one reported modified occurrence, fresh validation with four test-rule PASS findings, real Qwen completion after both saved-evidence tools succeeded, and native Component2 selection/focus followed by clear. [Timeline and media review](../index.html#demonstration).
+The preserved 79.9-second real-host recording shows selected-component properties, a fresh comparison with one reported modified occurrence, fresh validation with four test-rule PASS findings, real Qwen completion after both saved-evidence tools succeeded, and native Component2 selection/focus followed by clear. [Timeline and media review](index.html#demonstration).
 
 The original visible-unsuppressed-versus-stored-suppressed discrepancy remains open. The video does not diagnose the original capture, authenticate requirements or establish atomic correspondence between revision/validation captures.
 

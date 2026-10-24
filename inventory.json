@@ -1,51 +1,47 @@
 {
     "privateMediaEnabled":  false,
-    "purpose":  "allowlisted public website export",
+    "schemaVersion":  1,
+    "purpose":  "flat public website upload; select all files together at repository root",
     "files":  [
                   {
-                      "file":  "index.html",
-                      "bytes":  18221,
-                      "sha256":  "712066C505DCE7BACB7963F54A4602F116437C811F91C7D9CB6C07C741D90161"
+                      "file":  "architecture.md",
+                      "bytes":  6383,
+                      "sha256":  "144F24EA5DB0A406583B8DEED5F2EF470D6DE5ACEBE120210694BF0BCF79325E"
                   },
                   {
-                      "file":  "styles.css",
-                      "bytes":  19429,
-                      "sha256":  "CF4DD7E2A45B4230B3002638642146B60A429FB668D826547CB0C63E62A92388"
+                      "file":  "case-study.md",
+                      "bytes":  5604,
+                      "sha256":  "B2771D6E64EFD97CFB0F3C118FD9C858EA3B9A1709376E796518B3C309E4792E"
                   },
                   {
-                      "file":  "script.js",
-                      "bytes":  11721,
-                      "sha256":  "7981E81FD4AF7A44FB7A5E2B69552F1322A8F9CB33EBA107B1DBFAA48E24A8A3"
+                      "file":  "engineering-change-copilot-highlight.mp4",
+                      "bytes":  11385828,
+                      "sha256":  "949882083AD0FB4A0C01F935A3BCE0B8A562DF803286E04D3F55819B5EEBCA98"
                   },
                   {
-                      "file":  "assets/mark.svg",
-                      "bytes":  307,
-                      "sha256":  "8341016F610FCC3BFB0B68AB60BB49B4862BCC81373BB5A518B1A23D5AE3307C"
+                      "file":  "evaluation.md",
+                      "bytes":  5090,
+                      "sha256":  "AB52283417B952C3217A39FC1D8F2B5C95A560396E9A2BBAA647E77DB48DE701"
                   },
                   {
-                      "file":  "assets/media-placeholder.svg",
-                      "bytes":  914,
-                      "sha256":  "81FC5B664D0CC91517B962BC1AEC1D6D7AA1219BC307C4842499C772DCFDE95F"
-                  },
-                  {
-                      "file":  "assets/highlight-captions.vtt",
+                      "file":  "highlight-captions.vtt",
                       "bytes":  609,
                       "sha256":  "7538B00A118AAB8A012D3F4B3FD32E3647654A8BFD910B95D78624286CBADB66"
                   },
                   {
-                      "file":  "resources/architecture.md",
-                      "bytes":  6386,
-                      "sha256":  "AB6E5B1DA0522B95DFD19B7061E92E0CEE388D903319449CEBC35ABF31CEBAD6"
+                      "file":  "highlight-poster.jpg",
+                      "bytes":  235993,
+                      "sha256":  "FF741C1084F69CC6405C34526C3B62E3AD06508FBB5C51484B20EA0367283C25"
                   },
                   {
-                      "file":  "resources/evaluation.md",
-                      "bytes":  5093,
-                      "sha256":  "4580FD958D137ED4AD270695B71F8CD935E8B2F66E6E775110A328E8D365CF44"
+                      "file":  "index.html",
+                      "bytes":  18142,
+                      "sha256":  "BBB615BE4A48D3717BC2C5C46A5486231AE1F75966807B8D15E5C8CD6D639C45"
                   },
                   {
-                      "file":  "resources/case-study.md",
-                      "bytes":  5613,
-                      "sha256":  "116B6BE38DB33B9C7C5D23B962541BD71C57ED1FAA57088C6EA267EEB4A6056D"
+                      "file":  "mark.svg",
+                      "bytes":  307,
+                      "sha256":  "8341016F610FCC3BFB0B68AB60BB49B4862BCC81373BB5A518B1A23D5AE3307C"
                   },
                   {
                       "file":  "media-config.js",
@@ -53,35 +49,25 @@
                       "sha256":  "CDEDD8674E5748113518628220D4306047B389AABE8CDA460E63C0569C848E82"
                   },
                   {
+                      "file":  "media-placeholder.svg",
+                      "bytes":  914,
+                      "sha256":  "81FC5B664D0CC91517B962BC1AEC1D6D7AA1219BC307C4842499C772DCFDE95F"
+                  },
+                  {
                       "file":  "PUBLIC_EXPORT_NOTICE.txt",
                       "bytes":  449,
                       "sha256":  "A878324CEC8CFCC1CA849DE742EACABF370A82F585DC89286758495C31655266"
                   },
                   {
-                      "file":  "media/engineering-change-copilot-highlight.mp4",
-                      "bytes":  11385828,
-                      "sha256":  "949882083AD0FB4A0C01F935A3BCE0B8A562DF803286E04D3F55819B5EEBCA98"
+                      "file":  "script.js",
+                      "bytes":  11696,
+                      "sha256":  "40F89E34F1B5F2D3B874E4D94D28104235EF566CB43CE0FE194869A897957D7E"
                   },
                   {
-                      "file":  "media/highlight-poster.jpg",
-                      "bytes":  235993,
-                      "sha256":  "FF741C1084F69CC6405C34526C3B62E3AD06508FBB5C51484B20EA0367283C25"
+                      "file":  "styles.css",
+                      "bytes":  19429,
+                      "sha256":  "CF4DD7E2A45B4230B3002638642146B60A429FB668D826547CB0C63E62A92388"
                   }
               ],
-    "publicationApproved":  true,
-    "schemaVersion":  1,
-    "approvedVideoIncluded":  true,
-    "excluded":  [
-                     "private-assets",
-                     "demo_artifacts",
-                     "original recording",
-                     "other CAD screenshots",
-                     "CAD files",
-                     "project source",
-                     "stores",
-                     "diagnostics",
-                     "credentials",
-                     "model weights",
-                     "vendor binaries"
-                 ]
+    "approvedVideoIncluded":  true
 }

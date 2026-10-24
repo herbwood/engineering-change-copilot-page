@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const $ = (selector) => document.querySelector(selector);
-  const placeholder = 'assets/media-placeholder.svg';
+  const placeholder = 'media-placeholder.svg';
   const localOrigin = location.protocol === 'file:' || ['localhost', '127.0.0.1', 'ecc.local'].includes(location.hostname);
   const privateMode = window.ECC_PAGE?.allowPrivatePreview === true && localOrigin && new URLSearchParams(location.search).get('media') === 'private';
   const publicVideoMode = window.ECC_PAGE?.approvedPublicVideo === true;
@@ -77,9 +77,9 @@
   } else if (publicVideoMode) {
     $('#mode-notice').textContent = 'Approved 42-second edited feature highlight. The original recording and other private project assets are not distributed.';
     document.querySelectorAll('.media-mode-label').forEach(label => label.textContent = 'Edited feature highlight');
-    $('#hero-image').src = 'media/highlight-poster.jpg'; $('#hero-image').alt = 'Actual recorded SOLIDWORKS viewport and Copilot Task Pane from the approved feature highlight.';
+    $('#hero-image').src = 'highlight-poster.jpg'; $('#hero-image').alt = 'Actual recorded SOLIDWORKS viewport and Copilot Task Pane from the approved feature highlight.';
     $('#hero-caption').textContent = 'Actual recording · 42-second edited highlight';
-    video.poster = 'media/highlight-poster.jpg'; video.src = 'media/engineering-change-copilot-highlight.mp4';
+    video.poster = 'highlight-poster.jpg'; video.src = 'engineering-change-copilot-highlight.mp4';
     $('#original-demo').textContent = 'Full original · not publicly distributed';
   }
   if (videoEnabled) {

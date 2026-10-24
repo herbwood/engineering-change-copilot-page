@@ -10,7 +10,7 @@ A chat model cannot infer active CAD selection, distinguish cached fields from p
 
 ## 3. Native CAD integration architecture
 
-A C#/.NET Framework 4.8 x64 COM add-in hosts a WebView2 Task Pane in SOLIDWORKS 2026. UI-STA readers produce bounded managed snapshots. Revision and independent BOM/rule engines preserve evidence/completeness. Optional local Qwen3-4B uses structured calls via Ollama. An evidence registry connects findings to explicit native selection/focus. [Architecture](../index.html#architecture).
+A C#/.NET Framework 4.8 x64 COM add-in hosts a WebView2 Task Pane in SOLIDWORKS 2026. UI-STA readers produce bounded managed snapshots. Revision and independent BOM/rule engines preserve evidence/completeness. Optional local Qwen3-4B uses structured calls via Ollama. An evidence registry connects findings to explicit native selection/focus. [Architecture](index.html#architecture).
 
 ## 4. Implementation challenges and solutions
 
@@ -22,11 +22,11 @@ A C#/.NET Framework 4.8 x64 COM add-in hosts a WebView2 Task Pane in SOLIDWORKS 
 
 ## 5. Demonstrated end-to-end workflow
 
-A continuous 79.9-second actual SOLIDWORKS recording shows Inspect, Compare, Validate, Explain and Locate: one reported modification, four PASS findings under test-only rules, two successful real model tools, a cited answer and native focus/clear. No fabricated UI/response is used. The original remains local; public CAD/media rights are unresolved. [Demo guide](../index.html#demonstration).
+A continuous 79.9-second actual SOLIDWORKS recording shows Inspect, Compare, Validate, Explain and Locate: one reported modification, four PASS findings under test-only rules, two successful real model tools, a cited answer and native focus/clear. No fabricated UI/response is used. The original remains local; public CAD/media rights are unresolved. [Demo guide](index.html#demonstration).
 
 ## 6. Quantitative evaluation
 
-Normal regressions 155/155; historical diagnostic build 162/162; WebView2 64/64; independently labeled deterministic cases 32/32. Real-inference original/holdout completion: 21/22 and 11/12; strict selection: 21/22 and 12/12; valid calls: 23/24 and 13/14; applicable citations: 4/4 and 3/3. Model evaluation uses a managed synthetic host. Populations do not imply combined field accuracy. [Exact results/failures](../index.html#results).
+Normal regressions 155/155; historical diagnostic build 162/162; WebView2 64/64; independently labeled deterministic cases 32/32. Real-inference original/holdout completion: 21/22 and 11/12; strict selection: 21/22 and 12/12; valid calls: 23/24 and 13/14; applicable citations: 4/4 and 3/3. Model evaluation uses a managed synthetic host. Populations do not imply combined field accuracy. [Exact results/failures](index.html#results).
 
 ## 7. Observed limitations
 

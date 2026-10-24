@@ -55,4 +55,4 @@ Only an explicit UI evidence action calls `SolidWorksNavigation`. Current docume
 
 The shipped template disables inference and CAD sharing. Default backend is configurable loopback Ollama with `qwen3:4b-instruct`; remote endpoints need separate opt-in. Deterministic review works offline. Loopback consent still matters because prompts contain selected CAD observations. Runtime diagnostics retain bounded classifications/metrics rather than full prompts, raw responses, property values or absolute CAD paths. Browser origins/navigation and the typed bridge are restricted; CAD/model strings render as inert text.
 
-Implementation entry points: `src/SolidWorksAddin/{SwAddin.cs,SolidWorks,Revision,Validation,EvidenceReview,Agent,Bridge,UI,Web}`. [Measured evidence and outstanding acceptance](../index.html#results).
+Implementation entry points: `src/SolidWorksAddin/{SwAddin.cs,SolidWorks,Revision,Validation,EvidenceReview,Agent,Bridge,UI,Web}`. [Measured evidence and outstanding acceptance](index.html#results).
