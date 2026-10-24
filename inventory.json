@@ -1,0 +1,73 @@
+{
+    "privateMediaEnabled":  false,
+    "purpose":  "local media-free public-export review; not permission to publish",
+    "files":  [
+                  {
+                      "file":  "index.html",
+                      "bytes":  18221,
+                      "sha256":  "712066C505DCE7BACB7963F54A4602F116437C811F91C7D9CB6C07C741D90161"
+                  },
+                  {
+                      "file":  "styles.css",
+                      "bytes":  19429,
+                      "sha256":  "CF4DD7E2A45B4230B3002638642146B60A429FB668D826547CB0C63E62A92388"
+                  },
+                  {
+                      "file":  "script.js",
+                      "bytes":  10703,
+                      "sha256":  "BA764352F105706634F65030CB1CFEF359ECA148D71ECD5F04E92909B8648F3A"
+                  },
+                  {
+                      "file":  "assets/mark.svg",
+                      "bytes":  307,
+                      "sha256":  "8341016F610FCC3BFB0B68AB60BB49B4862BCC81373BB5A518B1A23D5AE3307C"
+                  },
+                  {
+                      "file":  "assets/media-placeholder.svg",
+                      "bytes":  914,
+                      "sha256":  "81FC5B664D0CC91517B962BC1AEC1D6D7AA1219BC307C4842499C772DCFDE95F"
+                  },
+                  {
+                      "file":  "assets/highlight-captions.vtt",
+                      "bytes":  609,
+                      "sha256":  "7538B00A118AAB8A012D3F4B3FD32E3647654A8BFD910B95D78624286CBADB66"
+                  },
+                  {
+                      "file":  "resources/architecture.md",
+                      "bytes":  6386,
+                      "sha256":  "AB6E5B1DA0522B95DFD19B7061E92E0CEE388D903319449CEBC35ABF31CEBAD6"
+                  },
+                  {
+                      "file":  "resources/evaluation.md",
+                      "bytes":  5093,
+                      "sha256":  "4580FD958D137ED4AD270695B71F8CD935E8B2F66E6E775110A328E8D365CF44"
+                  },
+                  {
+                      "file":  "resources/case-study.md",
+                      "bytes":  5613,
+                      "sha256":  "116B6BE38DB33B9C7C5D23B962541BD71C57ED1FAA57088C6EA267EEB4A6056D"
+                  },
+                  {
+                      "file":  "media-config.js",
+                      "bytes":  64,
+                      "sha256":  "EAFA3AC334BF3097D053B1CD09BDBDA09B3F54C39F964E568932FF42E56DC131"
+                  },
+                  {
+                      "file":  "PUBLIC_EXPORT_NOTICE.txt",
+                      "bytes":  345,
+                      "sha256":  "650F2E92148133F0B17B25CCB577BFB5B0153D521FC8C8800FC0AEE0B734584C"
+                  }
+              ],
+    "publicationApproved":  false,
+    "schemaVersion":  1,
+    "excluded":  [
+                     "private-assets",
+                     "demo_artifacts",
+                     "CAD",
+                     "stores",
+                     "diagnostics",
+                     "credentials",
+                     "model weights",
+                     "vendor binaries"
+                 ]
+}

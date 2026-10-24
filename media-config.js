@@ -1,0 +1,1 @@
+window.ECC_PAGE = Object.freeze({ allowPrivatePreview: false });

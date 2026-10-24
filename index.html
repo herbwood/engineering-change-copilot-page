@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Engineering Change Copilot: a SOLIDWORKS-native assistant connecting deterministic CAD evidence, independent validation, local reasoning and verified 3D navigation.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Engineering Change Copilot — Evidence-Grounded AI for CAD Design Review</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="media-config.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="Engineering Change Copilot home"><img src="assets/mark.svg" alt="" width="30" height="30"><span>Engineering Change <b>Copilot</b></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
+      <nav id="navigation" aria-label="Main navigation"><a href="#workflow">Workflow</a><a href="#demonstration">Demo</a><a href="#architecture">Architecture</a><a href="#results">Evidence</a><a href="#resources">Resources</a></nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero section-wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-intro"><div class="hero-title-block">
+      <div class="eyebrow"><span class="line"></span> ENGINEERING SOFTWARE / LOCAL AI</div>
+      <h1 id="hero-title">Engineering Change<br><span>Copilot</span></h1>
+      </div><div class="hero-context">
+      <p class="hero-subtitle">Evidence-Grounded AI for CAD Design Review</p>
+      <p class="hero-description">A SOLIDWORKS-native AI assistant that connects engineering change detection, rule validation, local LLM reasoning, and 3D component navigation.</p>
+      <div class="hero-actions"><a class="button primary" href="#demonstration">View Demonstration <span aria-hidden="true">↗</span></a><a class="button secondary" href="#architecture">Explore Architecture <span aria-hidden="true">↓</span></a></div>
+      <ul class="tech-labels" aria-label="Technology stack"><li>SOLIDWORKS 2026</li><li>C# / .NET 4.8</li><li>WebView2</li><li>Local Qwen3-4B</li></ul>
+      </div></div>
+      <figure class="hero-figure media-frame">
+        <div class="frame-bar"><span><span class="status-dot" aria-hidden="true"></span> Native SOLIDWORKS application</span><span class="media-mode-label">Restricted imagery withheld</span></div>
+        <div class="hero-player">
+          <img id="hero-image" src="assets/media-placeholder.svg" data-media="hero" width="1920" height="1026" alt="Restricted CAD imagery placeholder. Enable the authorized private local preview to view actual SOLIDWORKS footage." fetchpriority="high">
+          <video id="hero-video" controls playsinline preload="none" aria-label="Engineering Change Copilot 42-second edited feature highlight" hidden><track kind="captions" src="assets/highlight-captions.vtt" srclang="en" label="English presentation notes"></video>
+          <button id="hero-play" class="hero-play" type="button" aria-label="Play the 42-second feature highlight in this Hero" aria-controls="hero-video" hidden><span class="hero-play-icon" aria-hidden="true">&#9654;</span><span>Play demonstration<small>42-second feature highlight</small></span></button>
+        </div>
+        <p id="hero-video-status" class="hero-video-status" role="status" hidden></p>
+        <figcaption><span>From a finding to a verified 3D occurrence.</span><span id="hero-caption">Media permission is local-only.</span></figcaption>
+      </figure>
+      <p id="mode-notice" class="mode-notice" role="status">Public-safe preview. Restricted CAD footage is excluded by default.</p>
+    </section>
+
+    <section class="problem section-wrap" id="problem" aria-labelledby="problem-title">
+      <div class="section-heading"><p class="eyebrow">01 / THE ENGINEERING PROBLEM</p><h2 id="problem-title">A change is more than<br>a different file.</h2><p>Review requires a chain of evidence: which occurrence changed, what can be known, and where it lives in the assembly.</p></div>
+      <div class="problem-chain" aria-label="Engineering review challenges">
+        <article><span class="step-number">01</span><h3>Identify the occurrence</h3><p>Repeated parts and temporary references make a name or part number insufficient.</p><span class="problem-tag">Identity + configuration</span></article>
+        <article><span class="step-number">02</span><h3>Establish the evidence</h3><p>Suppression and cached properties affect completeness. Missing data is not a confirmed removal.</p><span class="problem-tag">Known ≠ assumed</span></article>
+        <article><span class="step-number">03</span><h3>Review against intent</h3><p>Check independently supplied requirements, then connect the finding to the actual 3D component.</p><span class="problem-tag">Independent rules + native context</span></article>
+      </div>
+    </section>
+
+    <section class="workflow section-wrap" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-heading heading-split"><div><p class="eyebrow">02 / END-TO-END WORKFLOW</p><h2 id="workflow-title">Read. Reason. Return to CAD.</h2></div><p>Five implemented capabilities.<br>One evidence-linked review workflow.</p></div>
+      <div class="feature-tabs" role="tablist" aria-label="Explore the five capabilities">
+        <button type="button" role="tab" id="tab-inspect" aria-controls="feature-panel" aria-selected="true" data-feature="inspect">01 <span>Inspect</span></button>
+        <button type="button" role="tab" id="tab-compare" aria-controls="feature-panel" aria-selected="false" tabindex="-1" data-feature="compare">02 <span>Compare</span></button>
+        <button type="button" role="tab" id="tab-validate" aria-controls="feature-panel" aria-selected="false" tabindex="-1" data-feature="validate">03 <span>Validate</span></button>
+        <button type="button" role="tab" id="tab-explain" aria-controls="feature-panel" aria-selected="false" tabindex="-1" data-feature="explain">04 <span>Explain</span></button>
+        <button type="button" role="tab" id="tab-locate" aria-controls="feature-panel" aria-selected="false" tabindex="-1" data-feature="locate">05 <span>Locate</span></button>
+      </div>
+      <div id="feature-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-inspect">
+        <div class="feature-copy"><h3 id="feature-title">Inspect the selected occurrence</h3><p id="feature-description">Read the actual selected component, referenced document and cached custom properties alongside the native model.</p><p class="feature-boundary" id="feature-boundary">Custom material properties do not establish SOLIDWORKS Physical Material.</p></div>
+        <figure class="feature-figure"><img id="feature-image" src="assets/media-placeholder.svg" width="1920" height="1080" alt="Restricted feature imagery placeholder"><figcaption><span id="feature-caption">Actual recording, enlarged and annotated for readability. Local-only.</span><button id="enlarge-frame" class="text-button" type="button" disabled>Enlarge frame ↗</button></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="demo-section" id="demonstration" aria-labelledby="demo-title"><div class="section-wrap">
+      <div class="section-heading heading-split"><div><p class="eyebrow">03 / ACTUAL APPLICATION FOOTAGE</p><h2 id="demo-title">Evidence becomes spatial.</h2></div><p>A 42-second edited feature highlight.<br>Real UI. Real tools. Real native focus.</p></div>
+      <div class="video-shell"><video id="demo-video" controls playsinline preload="none" poster="assets/media-placeholder.svg" aria-label="Edited Engineering Change Copilot feature demonstration" aria-describedby="video-description"><track kind="captions" src="assets/highlight-captions.vtt" srclang="en" label="English presentation notes"></video><div id="video-placeholder" class="video-placeholder"><span class="eyebrow">RESTRICTED DEMONSTRATION</span><h3>Actual CAD footage.<br>Private local preview.</h3><p>Public sharing rights are not yet cleared.<br>No substitute product footage is shown.</p></div></div>
+      <p id="video-status" class="media-status" role="status">Video withheld in public-safe mode.</p>
+      <div class="chapter-list" aria-label="Demonstration chapters"><button type="button" data-seek="0" disabled><span>00:00</span>Inspect</button><button type="button" data-seek="7" disabled><span>00:07</span>Compare</button><button type="button" data-seek="15" disabled><span>00:15</span>Validate</button><button type="button" data-seek="22" disabled><span>00:22</span>Explain</button><button type="button" data-seek="32" disabled><span>00:32</span>Locate</button></div>
+      <div class="video-notes"><p id="video-description">Edited from the preserved 79.9-second continuous recording. Cuts, enlarged crops and editorial callouts improve readability; they do not add CAD changes or replace model output. Silent, 10 fps source and export. On small screens, use the player's full-screen control to read source details.</p><a id="original-demo" class="resource-link unavailable" aria-disabled="true">Full original · private media unavailable <span aria-hidden="true">↗</span></a></div>
+    </div></section>
+
+    <section class="architecture section-wrap" id="architecture" aria-labelledby="architecture-title">
+      <div class="section-heading"><p class="eyebrow">04 / SYSTEM ARCHITECTURE</p><h2 id="architecture-title">Deterministic evidence.<br>Optional local reasoning.</h2><p>The model explains bounded observations. It does not decide what changed, invent requirements, or edit CAD.</p></div>
+      <ol class="architecture-flow" aria-label="Implemented data and explanation flow">
+        <li><span>01 / NATIVE</span><h3>SOLIDWORKS API / COM</h3><p>Active document + occurrences</p></li>
+        <li><span>02 / UI STA</span><h3>Native CAD Reader</h3><p>Bounded, cached observations</p></li>
+        <li><span>03 / DETERMINISTIC</span><h3>Revision + Validation</h3><p>Snapshots, independent BOM/rules</p></li>
+        <li><span>04 / PROVENANCE</span><h3>Evidence Registry</h3><p>Context-bound source handles</p></li>
+        <li><span>05 / READ ONLY</span><h3>Agent Tools</h3><p>Five typed, bounded functions</p></li>
+        <li><span>06 / LOCAL</span><h3>Qwen3-4B via Ollama</h3><p>Structured calls + cited explanation</p></li>
+        <li><span>07 / IN HOST</span><h3>WebView2 Task Pane</h3><p>Review evidence beside the model</p></li>
+      </ol>
+      <div class="navigation-branch"><span class="branch-arrow" aria-hidden="true">↩</span><div><strong>User clicks Locate → fresh native identity verification → selection + viewport focus</strong><p>Authorized UI action. The model has no CAD editing or navigation tool. Clear Highlight checks selection ownership.</p></div></div>
+      <details class="technical-details"><summary>Explore the engineering boundaries <span aria-hidden="true">+</span></summary><div class="detail-grid"><article><h3>COM stays on the UI STA</h3><p>Native reads/navigation are dispatched to the owning thread. Managed processing, disk I/O and HTTP run asynchronously with cancellation and stale-context guards.</p></article><article><h3>Saved evidence stays saved</h3><p>Revision and validation can have different capture IDs. Explanations preserve provenance; they do not imply an atomic live CAD state.</p></article><article><h3>Explicit tools, bounded scope</h3><p><code>get_active_document</code>, <code>get_selected_component</code>, <code>get_assembly_structure</code>, <code>get_revision_changes</code>, <code>get_validation_findings</code>.</p></article><article><h3>Local inference is optional</h3><p>Loopback Ollama is configurable. Backend use and CAD-metadata sharing require opt-in. Deterministic review remains available offline.</p></article></div></details>
+    </section>
+
+    <section class="results section-wrap" id="results" aria-labelledby="results-title">
+      <div class="section-heading"><p class="eyebrow">05 / MEASURED EVIDENCE</p><h2 id="results-title">Different tests.<br>Explicit boundaries.</h2><p>Exact denominators, distinct populations. No combined “CAD accuracy” score.</p></div>
+      <div class="metric-grid"><article><strong data-metric="regression">155<span>/155</span></strong><h3>Normal regression groups</h3><p>Managed native fixtures plus real .NET COM callback checks.</p></article><article><strong data-metric="browser">64<span>/64</span></strong><h3>WebView2 checks</h3><p>Real standalone browser. Synthetic CAD and model inputs.</p></article><article><strong data-metric="deterministic">32<span>/32</span></strong><h3>Independent synthetic cases</h3><p>Exact deterministic findings, identity decisions and rejections.</p></article></div>
+      <div class="model-results"><div><p class="eyebrow">REAL LOCAL INFERENCE / SYNTHETIC MANAGED CAD HOST</p><h3>Qwen tool-calling evaluation</h3><p>Phase 6A.1 retained runs. One stochastic run per set; failures remain included.</p></div><div class="table-scroll"><table><caption>Original set and independent holdout, exact denominators</caption><thead><tr><th scope="col">Measure</th><th scope="col">Original</th><th scope="col">Holdout</th></tr></thead><tbody><tr><th scope="row">Strict tool selection</th><td data-metric="originalTools">21/22</td><td data-metric="holdoutTools">12/12</td></tr><tr><th scope="row">Valid structured calls</th><td data-metric="originalCalls">23/24</td><td data-metric="holdoutCalls">13/14</td></tr><tr><th scope="row">Completion</th><td>21/22</td><td>11/12</td></tr><tr><th scope="row">Issued citations, applicable answers</th><td>4/4</td><td>3/3</td></tr></tbody></table></div></div>
+      <div class="evidence-boundary"><p><strong>Native observation:</strong> the actual SOLIDWORKS workflow is recorded. This is not completion of all <strong>12 formal native acceptance scenarios</strong>.</p><p>Human semantic review remains pending. Synthetic checks are not industrial CAD accuracy. Test-rule PASS is not engineering approval.</p></div>
+    </section>
+
+    <section class="challenges section-wrap" id="challenges" aria-labelledby="challenges-title"><div class="section-heading"><p class="eyebrow">06 / ENGINEERING CHALLENGES</p><h2 id="challenges-title">The hard part is the evidence.</h2></div><div class="challenge-list"><article><span>01</span><div><h3>Identity across temporary reference drift</h3><p>Combine assembly lineage, native references and qualified hierarchy/configuration evidence. Preserve original observations; withhold ambiguous pairings.</p></div></article><article><span>02</span><div><h3>Conservative conclusions from incomplete data</h3><p>Separate known suppression from unavailable properties. Distinguish FAIL from INCONCLUSIVE. Keep independently authored requirements separate from observed CAD.</p></div></article><article><span>03</span><div><h3>From AI citations to an actual occurrence</h3><p>Issue context-bound evidence handles, reject forged/stale links, verify current native identity and check selection/camera postconditions.</p></div></article></div><aside class="open-issue"><span class="issue-label">OPEN LIMITATION</span><div><h3>Historical suppression capture discrepancy</h3><p>The user observed an unsuppressed target, while its original saved baseline says suppressed. The diagnostic lookup gate has been corrected; post-fix native acceptance and historical capture accuracy remain unverified. The demo does not resolve this issue.</p></div></aside></section>
+
+    <section class="resources section-wrap" id="resources" aria-labelledby="resources-title"><div class="section-heading heading-split"><div><p class="eyebrow">07 / PROJECT RESOURCES</p><h2 id="resources-title">Inspect the implementation story.</h2></div><p>Local review materials.<br>No repository or installer has been published.</p></div><div class="resource-grid"><a href="resources/architecture.md"><span>IMPLEMENTATION</span><strong>Architecture overview ↗</strong><small>Threading, tools and evidence boundaries</small></a><a href="resources/evaluation.md"><span>EVALUATION</span><strong>Results and limitations ↗</strong><small>Exact populations, failures and acceptance status</small></a><a href="resources/case-study.md"><span>CASE STUDY</span><strong>Engineering challenges ↗</strong><small>Implementation narrative and roadmap</small></a><div class="unavailable-resource" aria-disabled="true"><span>NOT PUBLISHED</span><strong>Public GitHub repository</strong><small>Unavailable · no placeholder URL</small></div><div class="unavailable-resource" aria-disabled="true"><span>NOT AVAILABLE</span><strong>Installer / download</strong><small>Rights, acceptance and lifecycle gates remain open</small></div><div class="unavailable-resource" aria-disabled="true"><span>RIGHTS REVIEW REQUIRED</span><strong>Public full-demo media</strong><small>Local viewing permission does not authorize publication</small></div></div></section>
+  </main>
+  <footer class="site-footer section-wrap"><a class="brand" href="#top">Engineering Change Copilot <span aria-hidden="true">↑</span></a><p>Research &amp; engineering software portfolio · 2026<br>Locally prepared. Not published. No engineering approval claimed.</p></footer>
+  <dialog id="frame-dialog" aria-labelledby="dialog-title"><div class="dialog-bar"><h2 id="dialog-title">Actual recorded UI — annotated crop</h2><button id="close-dialog" type="button" aria-label="Close enlarged frame">Close ×</button></div><img id="dialog-image" alt=""><p>Enlarged authentic footage. Restricted to private local review.</p></dialog>
+  <noscript><p class="noscript">JavaScript is disabled. Architecture, evidence and resource links remain available; private media stays withheld.</p></noscript>
+</body>
+</html>
