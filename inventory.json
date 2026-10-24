@@ -1,6 +1,6 @@
 {
     "privateMediaEnabled":  false,
-    "purpose":  "local media-free public-export review; not permission to publish",
+    "purpose":  "allowlisted public website export",
     "files":  [
                   {
                       "file":  "index.html",
@@ -14,8 +14,8 @@
                   },
                   {
                       "file":  "script.js",
-                      "bytes":  10703,
-                      "sha256":  "BA764352F105706634F65030CB1CFEF359ECA148D71ECD5F04E92909B8648F3A"
+                      "bytes":  11721,
+                      "sha256":  "7981E81FD4AF7A44FB7A5E2B69552F1322A8F9CB33EBA107B1DBFAA48E24A8A3"
                   },
                   {
                       "file":  "assets/mark.svg",
@@ -49,21 +49,35 @@
                   },
                   {
                       "file":  "media-config.js",
-                      "bytes":  64,
-                      "sha256":  "EAFA3AC334BF3097D053B1CD09BDBDA09B3F54C39F964E568932FF42E56DC131"
+                      "bytes":  91,
+                      "sha256":  "CDEDD8674E5748113518628220D4306047B389AABE8CDA460E63C0569C848E82"
                   },
                   {
                       "file":  "PUBLIC_EXPORT_NOTICE.txt",
-                      "bytes":  345,
-                      "sha256":  "650F2E92148133F0B17B25CCB577BFB5B0153D521FC8C8800FC0AEE0B734584C"
+                      "bytes":  449,
+                      "sha256":  "A878324CEC8CFCC1CA849DE742EACABF370A82F585DC89286758495C31655266"
+                  },
+                  {
+                      "file":  "media/engineering-change-copilot-highlight.mp4",
+                      "bytes":  11385828,
+                      "sha256":  "949882083AD0FB4A0C01F935A3BCE0B8A562DF803286E04D3F55819B5EEBCA98"
+                  },
+                  {
+                      "file":  "media/highlight-poster.jpg",
+                      "bytes":  235993,
+                      "sha256":  "FF741C1084F69CC6405C34526C3B62E3AD06508FBB5C51484B20EA0367283C25"
                   }
               ],
-    "publicationApproved":  false,
+    "publicationApproved":  true,
     "schemaVersion":  1,
+    "approvedVideoIncluded":  true,
     "excluded":  [
                      "private-assets",
                      "demo_artifacts",
-                     "CAD",
+                     "original recording",
+                     "other CAD screenshots",
+                     "CAD files",
+                     "project source",
                      "stores",
                      "diagnostics",
                      "credentials",

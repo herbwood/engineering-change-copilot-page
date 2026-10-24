@@ -1,1 +1,1 @@
-window.ECC_PAGE = Object.freeze({ allowPrivatePreview: false });
+window.ECC_PAGE = Object.freeze({ allowPrivatePreview: false, approvedPublicVideo: true });

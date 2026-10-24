@@ -4,7 +4,9 @@
   const placeholder = 'assets/media-placeholder.svg';
   const localOrigin = location.protocol === 'file:' || ['localhost', '127.0.0.1', 'ecc.local'].includes(location.hostname);
   const privateMode = window.ECC_PAGE?.allowPrivatePreview === true && localOrigin && new URLSearchParams(location.search).get('media') === 'private';
-  document.documentElement.dataset.mediaMode = privateMode ? 'private' : 'public';
+  const publicVideoMode = window.ECC_PAGE?.approvedPublicVideo === true;
+  const videoEnabled = privateMode || publicVideoMode;
+  document.documentElement.dataset.mediaMode = privateMode ? 'private' : publicVideoMode ? 'public-video' : 'public';
   const features = {
     inspect: { title: 'Inspect the selected occurrence', description: 'Read the actual selected component, referenced document and cached custom properties alongside the native model.', boundary: 'Custom material properties do not establish SOLIDWORKS Physical Material.', alt: 'Enlarged actual Component2 properties beside the recorded native assembly.' },
     compare: { title: 'Compare saved design evidence', description: 'See the reported modified occurrence, its before/after evidence and the incompleteness warning. Technical reference drift is kept separate.', boundary: 'The historical suppression capture discrepancy remains open. This is a stored observation, not proof of the original native state.', alt: 'Actual recorded suppression evidence with its full incompleteness warning and open-issue annotation.' },
@@ -49,37 +51,47 @@
   const video = $('#demo-video'); const status = $('#video-status');
   const heroVideo = $('#hero-video'); const heroPlay = $('#hero-play'); const heroStatus = $('#hero-video-status');
   heroPlay.addEventListener('click', () => {
-    if (!privateMode) return;
+    if (!videoEnabled) return;
     heroPlay.hidden = true; $('#hero-image').hidden = true; heroVideo.hidden = false;
-    heroStatus.hidden = false; heroStatus.textContent = 'Loading the local feature highlight...';
+    heroStatus.hidden = false; heroStatus.textContent = 'Loading the feature highlight...';
     if (!heroVideo.getAttribute('src')) heroVideo.src = video.getAttribute('src');
     video.pause();
-    heroVideo.play().catch(() => { heroStatus.textContent = 'Playback did not start. Use the video controls to play the local highlight.'; });
+    heroVideo.play().catch(() => { heroStatus.textContent = 'Playback did not start. Use the video controls to play the highlight.'; });
     heroVideo.focus();
   });
   heroVideo.addEventListener('playing', () => { heroStatus.textContent = 'Playing the actual recording edit. Pause and fullscreen are available in the player controls.'; });
   heroVideo.addEventListener('error', () => {
-    if (!privateMode) return;
+    if (!videoEnabled) return;
     heroVideo.hidden = true; $('#hero-image').hidden = false; heroPlay.hidden = true;
-    heroStatus.hidden = false; heroStatus.textContent = 'Local video unavailable. Check the private-assets file and H.264 playback support.';
+    heroStatus.hidden = false; heroStatus.textContent = 'Video unavailable. Check the media file and H.264 playback support.';
   });
   heroVideo.addEventListener('play', () => video.pause());
   video.addEventListener('play', () => heroVideo.pause());
   if (privateMode) {
-    $('#mode-notice').textContent = 'PRIVATE LOCAL MEDIA PREVIEW · The approved disposable fixture is visible. Public redistribution is not authorized.';
+    $('#mode-notice').textContent = 'PRIVATE LOCAL MEDIA PREVIEW · Includes local-only source imagery and the full original recording.';
     document.querySelectorAll('.media-mode-label').forEach(label => label.textContent = 'Private local media');
     $('#hero-image').src = 'private-assets/hero.jpg'; $('#hero-image').alt = 'Actual SOLIDWORKS Component2 focus beside the Engineering Change Copilot native Task Pane.';
     $('#hero-caption').textContent = 'Actual window recording · local-only permission';
-    heroPlay.hidden = false;
-    video.poster = 'private-assets/poster.jpg'; video.src = 'private-assets/engineering-change-copilot-highlight.mp4'; video.preload = 'metadata'; $('#video-placeholder').hidden = true;
-    status.textContent = 'Loading local H.264 highlight…';
-    document.querySelectorAll('[data-seek]').forEach(button => { button.disabled = false; button.addEventListener('click', () => { const seek = () => { video.currentTime = Number(button.dataset.seek); video.focus(); }; if (video.readyState >= 1) seek(); else { video.addEventListener('loadedmetadata', seek, { once: true }); video.load(); } }); });
+    video.poster = 'private-assets/poster.jpg'; video.src = 'private-assets/engineering-change-copilot-highlight.mp4';
     const original = $('#original-demo'); original.href = '../demo_artifacts/engineering_change_copilot_demo.mp4'; original.textContent = 'Full original · 79.9 seconds ↗'; original.removeAttribute('aria-disabled'); original.classList.remove('unavailable'); original.target = '_blank'; original.rel = 'noopener noreferrer';
+  } else if (publicVideoMode) {
+    $('#mode-notice').textContent = 'Approved 42-second edited feature highlight. The original recording and other private project assets are not distributed.';
+    document.querySelectorAll('.media-mode-label').forEach(label => label.textContent = 'Edited feature highlight');
+    $('#hero-image').src = 'media/highlight-poster.jpg'; $('#hero-image').alt = 'Actual recorded SOLIDWORKS viewport and Copilot Task Pane from the approved feature highlight.';
+    $('#hero-caption').textContent = 'Actual recording · 42-second edited highlight';
+    video.poster = 'media/highlight-poster.jpg'; video.src = 'media/engineering-change-copilot-highlight.mp4';
+    $('#original-demo').textContent = 'Full original · not publicly distributed';
   }
-  video.addEventListener('loadedmetadata', () => { status.classList.remove('error'); status.textContent = `Local highlight ready · ${video.duration.toFixed(1)} seconds · H.264 · 10 fps · edited, not continuous.`; });
-  video.addEventListener('waiting', () => { status.textContent = 'Buffering local video…'; });
+  if (videoEnabled) {
+    heroPlay.hidden = false;
+    video.preload = 'metadata'; $('#video-placeholder').hidden = true;
+    status.textContent = 'Loading H.264 highlight…';
+    document.querySelectorAll('[data-seek]').forEach(button => { button.disabled = false; button.addEventListener('click', () => { const seek = () => { video.currentTime = Number(button.dataset.seek); video.focus(); }; if (video.readyState >= 1) seek(); else { video.addEventListener('loadedmetadata', seek, { once: true }); video.load(); } }); });
+  }
+  video.addEventListener('loadedmetadata', () => { status.classList.remove('error'); status.textContent = `Highlight ready · ${video.duration.toFixed(1)} seconds · H.264 · 10 fps · edited, not continuous.`; });
+  video.addEventListener('waiting', () => { status.textContent = 'Buffering video…'; });
   video.addEventListener('playing', () => { status.textContent = 'Playing the actual recording edit. Enlarged crops and editorial callouts are presentation only.'; });
-  video.addEventListener('error', () => { if (!privateMode) return; status.classList.add('error'); status.textContent = 'Local video unavailable. Check the private-assets file and H.264 playback support. No substitute footage is shown.'; $('#video-placeholder').hidden = false; $('#video-placeholder').querySelector('h3').textContent = 'Local video unavailable.'; });
+  video.addEventListener('error', () => { if (!videoEnabled) return; status.classList.add('error'); status.textContent = 'Video unavailable. Check the media file and H.264 playback support. No substitute footage is shown.'; $('#video-placeholder').hidden = false; $('#video-placeholder').querySelector('h3').textContent = 'Video unavailable.'; $('#video-placeholder').querySelector('p').textContent = 'The approved highlight could not be loaded. No substitute footage is shown.'; });
   const navigationLinks = [...$('#navigation').querySelectorAll('a')];
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (!entry.isIntersecting) return; navigationLinks.forEach(link => { if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); }); }); }, { rootMargin: '-15% 0px -65% 0px' });
